@@ -19,4 +19,10 @@ def interpret(tokens):
 
 @register_line_magic
 def pn(line):
+    """Polish Notation interpreter
+
+    Usage:
+    >>> %pn + 2 2
+    4
+    """
     return interpret(deque(line.split()))
