@@ -52,7 +52,7 @@ def _get_history(range_string):
 @magics_class
 class MypyMagics(Magics):
     @line_magic
-    def mypy_run(self, line):
+    def mypy(self, line):
         """Runs mypy type check on given lines from the history.
 
         It prints the report and errors and returns the exit code from mypy.
