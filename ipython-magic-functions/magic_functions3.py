@@ -2,29 +2,6 @@ from IPython.core.magic import Magics, magics_class, line_magic
 import re
 
 
-def _run_mypy(code_block, parameters):
-    """Runs mypy on a code_block
-
-    Parameters
-    ----------
-    code_block : str
-        String of code to check
-    parameters : list, optional
-        List of parameters that mypy accepts
-
-    Returns
-    -------
-    tuple
-        (checking_report, error_report, exit_code)
-    """
-    try:
-        from mypy.api import run
-    except ImportError:
-        return "'mypy' not installed. Did you run 'pip install mypy'?"
-
-    return run(["-c", code_block, *parameters])
-
-
 def _get_history(range_string):
     """Returns commands from a given history range
 
@@ -68,6 +45,11 @@ class MypyMagics(Magics):
         int
             Integer with the exit code returned by mypy
         """
+        try:
+            from mypy.api import run
+        except ImportError:
+            return "'mypy' not installed. Did you run 'pip install mypy'?"
+
         if not line:
             return "You need to specify cell range, e.g. '1', '1 2' or '1-5'."
 
@@ -90,7 +72,7 @@ class MypyMagics(Magics):
         print("Running type checks on:")
         print(commands)
 
-        result = _run_mypy(commands, mypy_arguments)
+        result = run(["-c", commands, *mypy_arguments])
 
         if result[0]:
             print("\nType checking report:\n")
