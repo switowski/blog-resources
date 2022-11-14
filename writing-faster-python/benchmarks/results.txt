@@ -1,0 +1,15 @@
+Function              3.7.14     3.8.14     3.9.14     3.10.7     3.11.0     3.7.14/3.11.0
+test_permission2()    218 nsec   145 nsec   148 nsec   145 nsec   140 nsec   1.68
+test_forgiveness2()   91.9 nsec  70.4 nsec  72 nsec    83.1 nsec  71.7 nsec  1.31
+test_permission3()    77.4 nsec  60.9 nsec  61.9 nsec  57.1 nsec  40.5 nsec  1.88
+test_forgiveness3()   256 nsec   251 nsec   239 nsec   283 nsec   307 nsec   .83
+count_numbers()       46.8 usec  47.5 usec  47.4 usec  46.6 usec  41 usec    1.14
+generator()           47.1 usec  47.7 usec  47.6 usec  45.3 usec  39.5 usec  1.18
+for_loop()            27.2 msec  26.5 msec  26.8 msec  25.6 msec  19.4 msec  1.39
+list_comprehension()  18.3 msec  18 msec    18.6 msec  17.7 msec  17.3 msec  1.04
+test_sort()           175 msec   175 msec   176 msec   176 msec   175 msec   .97
+test_sorted()         183 msec   183 msec   186 msec   183 msec   185 msec   1.00
+test_for_loop()       360 msec   364 msec   316 msec   305 msec   308 msec   1.17
+test_set()            5.59 msec  5.57 msec  5.83 msec  6.09 msec  6.08 msec  .91
+bubble_sort()         8.05 sec   8.24 sec   8.23 sec   7.89 sec   4.69 sec   1.72
+estimate_pi()         17.1 sec   17.9 sec   18.1 sec   17.4 sec   14.3 sec   1.21

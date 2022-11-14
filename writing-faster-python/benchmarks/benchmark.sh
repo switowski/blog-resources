@@ -7,7 +7,6 @@ set -o pipefail
 
 # Python versions that we will test
 PYENV_VERSIONS=(3.7.14 3.8.14 3.9.14 3.10.7 3.11.0)
-# PYENV_VERSIONS=(3.7.14 3.11.0)
 
 # Setup code and the actual functions that we will benchmark
 COMMANDS=(
