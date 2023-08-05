@@ -12,12 +12,71 @@ def pathlib_join():
     return Path("/") / "some" / "nested" / "path" / "to" / "a" / "file.txt"
 
 
-def pathlib_from_args():
+def os_path_join_short():
+    return os.path.join("/", "file.txt")
+
+
+def pathlib_join_short():
+    return Path("/") / "file.txt"
+
+
+def os_path_join_long():
+    return os.path.join(
+        "/",
+        "an",
+        "even",
+        "longer",
+        "path",
+        "to",
+        "some",
+        "nested",
+        "folder",
+        "of",
+        "a",
+        "nested",
+        "and",
+        "nested",
+        "and",
+        "nested",
+        "and",
+        "nested" "path",
+        "to",
+        "file.txt",
+    )
+
+
+def pathlib_join_long():
+    return (
+        Path("/")
+        / "an"
+        / "even"
+        / "longer"
+        / "path"
+        / "to"
+        / "some"
+        / "nested"
+        / "folder"
+        / "of"
+        / "a"
+        / "nested"
+        / "and"
+        / "nested"
+        / "and"
+        / "nested"
+        / "and"
+        / "nested"
+        / "path"
+        / "to"
+        / "file.txt"
+    )
+
+
+def pathlib_multiple_args():
     return Path("/", "some", "nested", "path", "to", "a", "file.txt")
 
 
-def pathlib_from_relpath_args():
-    return Path("/", "some/nested/path/to/a/file.txt")
+def pathlib_full_path():
+    return Path("/some/nested/path/to/a/file.txt")
 
 
 # Same as before but with existing Path object
