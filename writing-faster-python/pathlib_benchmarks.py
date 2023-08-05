@@ -12,6 +12,14 @@ def pathlib_join():
     return Path("/") / "some" / "nested" / "path" / "to" / "a" / "file.txt"
 
 
+def pathlib_from_args():
+    return Path("/", "some", "nested", "path", "to", "a", "file.txt")
+
+
+def pathlib_from_relpath_args():
+    return Path("/", "some/nested/path/to/a/file.txt")
+
+
 # Same as before but with existing Path object
 ROOT = Path("/")
 
@@ -22,7 +30,9 @@ def pathlib_join_existing_object(root=ROOT):
 
 # Construct dummy path starting at the home folder for the current user
 def os_path_join_home():
-    return os.path.join(os.path.expanduser("~"), "some", "nested", "path", "to", "a", "file.txt")
+    return os.path.join(
+        os.path.expanduser("~"), "some", "nested", "path", "to", "a", "file.txt"
+    )
 
 
 def pathlib_join_home():
